@@ -22,4 +22,15 @@ class RegistrationForm(forms.ModelForm):
             "password": forms.PasswordInput()
         }
 
-        
+class LoginForm(forms.Form):
+
+
+
+    username = forms.CharField(required=True, widget=forms.TextInput(attrs={
+        "class": "form-control",
+        "type": "text",
+        }))
+
+    password = forms.CharField(required=True, widget=forms.PasswordInput(attrs={
+        "class": "form-control",
+    }))
