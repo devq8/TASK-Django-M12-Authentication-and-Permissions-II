@@ -24,8 +24,6 @@ class RegistrationForm(forms.ModelForm):
 
 class LoginForm(forms.Form):
 
-
-
     username = forms.CharField(required=True, widget=forms.TextInput(attrs={
         "class": "form-control",
         "type": "text",

@@ -32,7 +32,7 @@ def create_movie(request):
     form = MovieForm()
     if request.method == "POST":
         # BONUS: This needs to have the `user` injected in the constructor
-        # somehow
+        
         form = MovieForm(request.POST)
         if form.is_valid():
             form.save()
