@@ -29,10 +29,12 @@ def get_movie(request, movie_id):
 
 @login_required
 def create_movie(request):
-    form = MovieForm()
+
+    logged_user = {"created_by":request.user}
+
+    form = MovieForm(initial=logged_user)
     if request.method == "POST":
         # BONUS: This needs to have the `user` injected in the constructor
-        
         form = MovieForm(request.POST)
         if form.is_valid():
             form.save()
